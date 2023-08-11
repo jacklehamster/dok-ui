@@ -1,19 +1,16 @@
 import * as React from 'react'
 import styles from './styles.module.css'
-import ReactDOM from 'react-dom'
-
-export function hookUp(hud: HTMLDivElement) {
-  ReactDOM.render(<ExampleComponent text='testing' />, hud);
-}
+import { BackgroundImageLayer } from './layers/background-layer'
 
 interface Props {
-  text: string
 }
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export const UiComponent = ({
 
-export function hello() {
-  console.log('hello')
+}: Props) => {
+
+
+  return <div className={styles.root}>
+    <BackgroundImageLayer image='https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png' width="100%" height="100%"></BackgroundImageLayer>
+  </div>
 }
